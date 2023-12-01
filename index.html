@@ -15,16 +15,15 @@
         font-size: 10px;
       }
       .main-container {
-        margin: 0 1rem;
         background-color: azure;
         width: 100%;
         height: 98vh;
         display: flex;
         align-items: center;
+        justify-content: center;
       }
 
       .container {
-        margin: auto;
         width: 80%;
         height: 200px;
         display: flex;
@@ -33,33 +32,45 @@
       }
 
       .key {
-        height: 4.5rem;
-        width: 4.8rem;
+        transition: all 0.07s;
+        margin-top: 6rem;
+        height: 5.5rem;
+        width: 5.8rem;
         text-align: center;
         color: aqua;
         font-size: 3.2rem;
         border: 2px solid brown;
         color: red;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        box-shadow: 2px 2px 1px black;
+      }
+
+      .current-play {
+        color: blue;
+        border: 2px solid rgb(148, 21, 1);
+        box-shadow: 2px 2px 1px rgb(83, 234, 63);
+        transform: scale(1.1);
       }
     </style>
   </head>
   <body>
     <header class="main-container">
       <div class="container">
-        <div class="key"><span>A</span></div>
-        <div class="key"><span>S</span></div>
-        <div class="key"><span>D</span></div>
-        <div class="key"><span>F</span></div>
-        <div class="key"><span>G</span></div>
-        <div class="key"><span>H</span></div>
-        <div class="key"><span>J</span></div>
-        <div class="key"><span>K</span></div>
-        <div class="key"><span>L</span></div>
-        <div class="key"><span>;</span></div>
+        <div class="key KeyA"><span>A</span></div>
+        <div class="key KeyS"><span>S</span></div>
+        <div class="key KeyD"><span>D</span></div>
+        <div class="key KeyF"><span>F</span></div>
+        <div class="key KeyG"><span>G</span></div>
+        <div class="key KeyH"><span>H</span></div>
+        <div class="key KeyJ"><span>J</span></div>
+        <div class="key KeyK"><span>K</span></div>
+        <div class="key KeyL"><span>L</span></div>
+        <div class="key Semicolon"><span>;</span></div>
       </div>
     </header>
-    <button>play</button>
-    <p>drum kit</p>
     <main>
       <audio help="A" src="./sounds/sounds_crash.mp3"></audio>
       <audio help="S" src="./sounds/Drumkit_sounds_clap.wav"></audio>
@@ -80,7 +91,9 @@
       //   });
 
       window.addEventListener("keypress", (event) => {
-        console.log(event.code);
+        const keys = document.querySelector(`.${event.code}`);
+        keys.classList.add("current-play");
+
         switch (event.code) {
           case "KeyA":
             document.querySelector("[help='A']").play();
@@ -113,6 +126,8 @@
             document.querySelector("[help='Semicolon']").play();
             break;
         }
+        setTimeout(() => keys.classList.remove("current-play"), 200);
+        // ;
       });
     </script>
   </body>
