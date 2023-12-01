@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drumkit project</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        font-size: 10px;
+      }
+      .main-container {
+        margin: 0 1rem;
+        background-color: azure;
+        width: 100%;
+        height: 98vh;
+        display: flex;
+        align-items: center;
+      }
+
+      .container {
+        margin: auto;
+        width: 80%;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        gap: 4rem;
+      }
+
+      .key {
+        height: 4.5rem;
+        width: 4.8rem;
+        text-align: center;
+        color: aqua;
+        font-size: 3.2rem;
+        border: 2px solid brown;
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="main-container">
+      <div class="container">
+        <div class="key"><span>A</span></div>
+        <div class="key"><span>S</span></div>
+        <div class="key"><span>D</span></div>
+        <div class="key"><span>F</span></div>
+        <div class="key"><span>G</span></div>
+        <div class="key"><span>H</span></div>
+        <div class="key"><span>J</span></div>
+        <div class="key"><span>K</span></div>
+        <div class="key"><span>L</span></div>
+      </div>
+    </header>
+    <button>play</button>
+    <p>drum kit</p>
+    <main>
+      <audio help="A" src="./sounds/Drumkit_sounds_boom.wav"></audio>
+      <audio help="S" src="./sounds/Drumkit_sounds_clap.wav"></audio>
+      <audio help="D" src="./sounds/Drumkit_sounds_kick.wav"></audio>
+      <audio help="F" src="./sounds/Drumkit_sounds_openhat.wav"></audio>
+      <audio help="G" src="./sounds/Drumkit_sounds_ride.wav"></audio>
+      <audio help="H" src="./sounds/Drumkit_sounds_tink.wav"></audio>
+      <audio help="J" src="./sounds/Drumkit_sounds_tom.wav"></audio>
+      <audio help="K" src="./sounds/sounds_crash.mp3"></audio>
+      <audio help="L" src="./sounds/sounds_tom-1.mp3"></audio>
+    </main>
+
+    <script>
+      const btn = document.querySelector("button");
+      btn.addEventListener("click", () => {
+        const audio = document.querySelector(".aaa").play();
+      });
+    </script>
+  </body>
+</html>
