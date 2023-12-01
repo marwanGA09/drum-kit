@@ -55,26 +55,64 @@
         <div class="key"><span>J</span></div>
         <div class="key"><span>K</span></div>
         <div class="key"><span>L</span></div>
+        <div class="key"><span>;</span></div>
       </div>
     </header>
     <button>play</button>
     <p>drum kit</p>
     <main>
-      <audio help="A" src="./sounds/Drumkit_sounds_boom.wav"></audio>
+      <audio help="A" src="./sounds/sounds_crash.mp3"></audio>
       <audio help="S" src="./sounds/Drumkit_sounds_clap.wav"></audio>
       <audio help="D" src="./sounds/Drumkit_sounds_kick.wav"></audio>
       <audio help="F" src="./sounds/Drumkit_sounds_openhat.wav"></audio>
       <audio help="G" src="./sounds/Drumkit_sounds_ride.wav"></audio>
-      <audio help="H" src="./sounds/Drumkit_sounds_tink.wav"></audio>
+      <audio help="H" src="./sounds/sounds_kick-bass.mp3"></audio>
       <audio help="J" src="./sounds/Drumkit_sounds_tom.wav"></audio>
-      <audio help="K" src="./sounds/sounds_crash.mp3"></audio>
+      <audio help="K" class="aaa" src="./sounds/sounds_crash.mp3"></audio>
       <audio help="L" src="./sounds/sounds_tom-1.mp3"></audio>
+      <audio help="Semicolon" src="./sounds/sounds_tom-2.mp3"></audio>
     </main>
 
     <script>
-      const btn = document.querySelector("button");
-      btn.addEventListener("click", () => {
-        const audio = document.querySelector(".aaa").play();
+      //   const btn = document.querySelector("button");
+      //   window.addEventListener("keydown", () => {
+      //     const audio = document.querySelector(".aaa").play();
+      //   });
+
+      window.addEventListener("keypress", (event) => {
+        console.log(event.code);
+        switch (event.code) {
+          case "KeyA":
+            document.querySelector("[help='A']").play();
+            break;
+          case "KeyS":
+            document.querySelector("[help='S']").play();
+            break;
+          case "KeyD":
+            document.querySelector("[help='D']").play();
+            break;
+          case "KeyF":
+            document.querySelector("[help='F']").play();
+            break;
+          case "KeyG":
+            document.querySelector("[help='G']").play();
+            break;
+          case "KeyH":
+            document.querySelector("[help='H']").play();
+            break;
+          case "KeyJ":
+            document.querySelector("[help='J']").play();
+            break;
+          case "KeyK":
+            document.querySelector("[help='K']").play();
+            break;
+          case "KeyL":
+            document.querySelector("[help='L']").play();
+            break;
+          case "Semicolon":
+            document.querySelector("[help='Semicolon']").play();
+            break;
+        }
       });
     </script>
   </body>
