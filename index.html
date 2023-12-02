@@ -4,73 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Drumkit project</title>
-    <style>
-      * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-      }
-
-      html {
-        font-size: 10px;
-        font-weight: 700;
-      }
-      .main-container {
-        background-image: url("./img/background.jpg");
-        background-size: cover;
-        width: 100%;
-        height: 94vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .container {
-        width: 80%;
-        height: 200px;
-        display: flex;
-        justify-content: center;
-        gap: 4rem;
-      }
-
-      .key {
-        transition: all 0.07s;
-        margin-top: 6rem;
-        height: 5.5rem;
-        width: 5.8rem;
-        text-align: center;
-        font-size: 3.2rem;
-        border: 2px solid rgb(134, 13, 13);
-        color: red;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 8px;
-        box-shadow: 2px 2px 1px rgb(35, 44, 104);
-      }
-
-      .current-play {
-        color: blue;
-        border: 2px solid rgb(148, 21, 1);
-        box-shadow: 2px 2px 1px rgb(83, 234, 63);
-        transform: scale(1.1);
-      }
-
-      footer {
-        background-color: bisque;
-        height: 4rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      h4 {
-        color: rgb(69, 53, 53);
-        font-size: 2rem;
-
-        text-transform: capitalize;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="" type="image/x-icon" />
+    <script src="./script.js" defer></script>
   </head>
   <body>
     <header class="main-container">
@@ -102,47 +38,5 @@
       <audio help="L" src="./sounds/sounds_tom-1.mp3"></audio>
       <audio help="Semicolon" src="./sounds/sounds_tom-2.mp3"></audio>
     </main>
-
-    <script>
-      window.addEventListener("keypress", (event) => {
-        const keys = document.querySelector(`.${event.code}`);
-        keys.classList.add("current-play");
-
-        switch (event.code) {
-          case "KeyA":
-            document.querySelector("[help='A']").play();
-            break;
-          case "KeyS":
-            document.querySelector("[help='S']").play();
-            break;
-          case "KeyD":
-            document.querySelector("[help='D']").play();
-            break;
-          case "KeyF":
-            document.querySelector("[help='F']").play();
-            break;
-          case "KeyG":
-            document.querySelector("[help='G']").play();
-            break;
-          case "KeyH":
-            document.querySelector("[help='H']").play();
-            break;
-          case "KeyJ":
-            document.querySelector("[help='J']").play();
-            break;
-          case "KeyK":
-            document.querySelector("[help='K']").play();
-            break;
-          case "KeyL":
-            document.querySelector("[help='L']").play();
-            break;
-          case "Semicolon":
-            document.querySelector("[help='Semicolon']").play();
-            break;
-        }
-        setTimeout(() => keys.classList.remove("current-play"), 200);
-        // ;
-      });
-    </script>
   </body>
 </html>
