@@ -18,9 +18,8 @@
       .main-container {
         background-image: url("./img/background.jpg");
         background-size: cover;
-        background-color: azure;
         width: 100%;
-        height: 98vh;
+        height: 94vh;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -40,15 +39,14 @@
         height: 5.5rem;
         width: 5.8rem;
         text-align: center;
-        color: aqua;
         font-size: 3.2rem;
-        border: 2px solid brown;
+        border: 2px solid rgb(134, 13, 13);
         color: red;
         display: flex;
         align-items: center;
         justify-content: center;
         border-radius: 8px;
-        box-shadow: 2px 2px 1px black;
+        box-shadow: 2px 2px 1px rgb(35, 44, 104);
       }
 
       .current-play {
@@ -56,6 +54,21 @@
         border: 2px solid rgb(148, 21, 1);
         box-shadow: 2px 2px 1px rgb(83, 234, 63);
         transform: scale(1.1);
+      }
+
+      footer {
+        background-color: bisque;
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      h4 {
+        color: rgb(69, 53, 53);
+        font-size: 2rem;
+
+        text-transform: capitalize;
       }
     </style>
   </head>
@@ -74,6 +87,9 @@
         <div class="key Semicolon"><span>;</span></div>
       </div>
     </header>
+    <footer>
+      <h4>&copy; developed by Ademk</h4>
+    </footer>
     <main>
       <audio help="A" src="./sounds/sounds_crash.mp3"></audio>
       <audio help="S" src="./sounds/Drumkit_sounds_clap.wav"></audio>
@@ -88,11 +104,6 @@
     </main>
 
     <script>
-      //   const btn = document.querySelector("button");
-      //   window.addEventListener("keydown", () => {
-      //     const audio = document.querySelector(".aaa").play();
-      //   });
-
       window.addEventListener("keypress", (event) => {
         const keys = document.querySelector(`.${event.code}`);
         keys.classList.add("current-play");
